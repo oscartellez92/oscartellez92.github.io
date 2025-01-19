@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;  /* Change background to white */
+    color: #333;  /* Change text color for better contrast */
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the header is on top of other elements */
+    background-color: #fff; /* Use the color you prefer */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+    padding: 5px 0; /* Reduced padding to make the header shorter */
+    background-color: #000068;
+}
+
+.container {
+    padding: 5px 10%; /* Adjusted to match the header's reduced height */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    padding: 10px; /* Reduced padding for the logo */
+    width: 120px; /* Adjusted logo width for better proportion */
+}
+
+nav ul li {
+    display: inline-block; 
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;  /* Dark text color for readability */
+    text-decoration: none;
+    font-size: 18px; /* Slightly reduced font size */
+    position: relative;
+    font-weight: 600;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #cb0000;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    background: linear-gradient(135deg, #6767d0, #3b3b92, #2d2d66);
+    justify-content: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align items to the start */
+    margin-top: 100px; /* Adjust based on your header height */
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.intro-text {
+    margin-top: 10%;
+    font-size: 28px;
+}
+
+.intro-text h1 {
+    font-size: 50px;
+    width: 100%;
+    color: #fbc21c;  /* Dark text for contrast */
+}
+
+.intro p {
+    color: #fbc21c;
+}
+
+.intro-text img {
+    margin: 10% 5%;
+    height: 200px;
+    opacity: 0.8;
+    transition: height 0.3s ease;
+}
+
+.intro-text img:hover {
+    opacity: 1;
+    height: 220px;
+}
+
+/* Ensure no extra space around the image container */
+.intro-pic {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Ensure no space below the image */
+.intro-pic img {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain the aspect ratio of the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin: 0;
+    padding: 0;
+}
+
+.intro-text h1 span {
+    color: #fff;  /* Color for highlights */
+}
+
+/*--------about--------*/
+
+#about {
+    padding: 80px 0;
+    color: #333;
+}
+
+.about {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between image and text */
+}
+
+.about-col-1 {
+    flex: 1;
+    max-width: 400px; /* Limit image size */
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    height: auto;
+}
+
+.about-col-2 {
+    flex: 2;
+}
+
+.about-col-2 h2 {
+    font-size: 50px; 
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about-col-2 p {
+    font-size: 18px; /* Increased font size for paragraph */
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/*--------------------Tab Titles Styling--------------------*/
+
+.tab-titles {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Space between tab items */
+    font-size: 18px;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    font-weight: 600;
+}
+
+.tab-links {
+    cursor: pointer;
+    padding: 5px 0;  /* Reduced padding to make it less button-like */
+    background-color: transparent; /* No background */
+    border: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.tab-links:hover {
+    color: #3b7fe4; /* Change text color on hover */
+}
+
+/* Active tab with dynamic underline */
+.tab-links.active-link {
+    font-weight: bold; /* Highlight active tab */
+    color: #3b7fe4; /* Set active tab color */
+}
+
+.tab-links.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3b7fe4; /* Underline color */
+}
+
+/*--------------------Tab Contents Styling--------------------*/
+.tab-contents {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.tab-contents ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.tab-contents li {
+    margin-bottom: 10px;
+    list-style-type: circle;
+}
+
+.tab-contents li span {
+    color: #d46707;
+    font-weight: bold;
+}
+
+
+/*expertise*/
+#expertise {
+    padding: 30px 0;
+    font-size: 30px;
+}
+
+.expertise-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.expertise-list div {
+    background-color: #ebebeb; /* Light background for expertise */
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.expertise-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.expertise-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #333;  /* Dark color for titles */
+}
+
+.expertise-list div a {
+    text-decoration: none;
+    color: #3b7fe4;  /* Button color */
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.expertise-list div:hover {
+    background: linear-gradient(135deg, #6767d0, #3b3b92, #2d2d66);
+    transform: translateY(-10px);
+    color: #fff;  /* Text color on hover */
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 80px 0; /* Add more padding at the top and bottom for spacing */
+    background-color: #f8f8f8; /* Light background color for the section */
+}
+
+#portfolio h2 {
+    font-size: 50px;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 40px; /* Space between the items */
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: box-shadow 0.3s ease-in-out;
+    color: #fff
+}
+
+.work:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+.work img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover; /* Maintain image aspect ratio and cover the area */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(135deg, rgba(103, 103, 208, 0.8), rgba(59, 59, 146, 0.8), rgba(45, 45, 102, 0.8));
+    border-radius: 12px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px; /* Reduced padding */
+    text-align: center;
+    font-size: 16px;
+    transition: height 0.5s ease-in-out;
+}
+
+.layer h3 {
+    font-weight: 600; /* Bolder text for project titles */
+    margin-bottom: 15px; /* Less margin between title and description */
+    color: #fff;
+    font-size: 20px; /* Slightly larger title */
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #cf0095;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.layer a:hover {
+    background: #95006b; /* Change to blue on hover */
+}
+
+.work:hover img {
+    transform: scale(1.1); /* Slightly smaller zoom effect */
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    margin: 60px auto;
+    width: fit-content;
+    border: 1px solid #3b7fe4;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    font-size: 18px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #6767d0, #3b3b92, #2d2d66);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #8585ff, #5c5cd9, #4a4aad);    ;
+    transition: background 0.5s ease-in-out;
+}
+
+
+/*contact*/
+
+#contact h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.contact-left {
+    flex-basis: 35%;     
+}
+
+.contact-right {
+    flex-basis: 60%;     
+}
+
+.contact-left p {
+    margin-top: 30px;
+    color: #333;
+}
+
+.contact-left a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.contact.left p i {
+    color: #3b7fe4;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ffffff;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #ff4710;
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #3b7fe4;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #f1f1f1;
+    padding: 15px;
+    margin: 15px 0;
+    color: #333;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #f1f1f1;  /* Lighter background */
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.copyright p i {
+    color: #3b7fe4;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+footer {
+    background: linear-gradient(135deg, #6767d0, #3b3b92, #2d2d66);
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/*CSS for small screen*/
+
+nav .fa-solid {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    body {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+
+    .intro-text {
+        font-size: 20px;
+        margin-left: 5%;
+    }
+
+    .intro-text h1 {
+        font-size: 30px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #132dd4;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;        
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .intro {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 10%;
+    }
+
+    .intro img {
+        height: 140px;
+    }
+
+    .about-col-1 img {
+        width: 100%;
+    }
+
+    .tab-titles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .tab-links {
+        margin: 0;
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .contact-right {
+        margin-top: 20px;
+    }
+
+    .contact-left {
+        margin-top: 40px;
+    }
+}
