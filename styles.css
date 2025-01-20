@@ -7,13 +7,14 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
     background: #fff;  /* Change background to white */
     color: #333;  /* Change text color for better contrast */
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
