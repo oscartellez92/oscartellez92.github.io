@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    outline: 1px solid red !important;
 }
 
 html {
@@ -13,7 +14,7 @@ body {
     background: #fff;  /* Change background to white */
     color: #333;  /* Change text color for better contrast */
     font-size: 16px;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 header {
@@ -22,14 +23,13 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000; /* Ensures the header is on top of other elements */
-    background-color: #fff; /* Use the color you prefer */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
     padding: 5px 0; /* Reduced padding to make the header shorter */
     background-color: #000068;
 }
 
 .container {
-    padding: 5px 10%; /* Adjusted to match the header's reduced height */
+    padding: 5px 5%;  /* Reduce padding on the sides */
 }
 
 nav {
@@ -185,7 +185,6 @@ nav ul li a:hover::after {
     font-size: 18px;
     list-style: none;
     padding: 0;
-    position: relative;
     font-weight: 600;
 }
 
@@ -435,7 +434,7 @@ nav ul li a:hover::after {
     position: relative;
 }
 
-.contact.left p i {
+.contact-left p i {
     color: #3b7fe4;
     margin-right: 15px;
     font-size: 25px;
@@ -509,53 +508,14 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-
-/*CSS for small screen*/
-
-nav .fa-solid {
-    display: none;
-}
-
-/* Style for the side menu */
-#sidemenu {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    right: -250px; /* Hide it initially */
-    background-color: #1024a7; /* Same as navbar color */
-    z-index: 999;
-    transition: 0.3s;
-}
-
-/* Side menu links */
-#sidemenu a {
-    padding: 15px;
-    text-decoration: none;
-    font-size: 22px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
 /* Hamburger menu styles */
 nav .fa-solid {
     display: none; /* Hide by default on larger screens */
 }
 
 @media only screen and (max-width: 600px) {
-    /* Prevent horizontal scrolling */
-    body {
-        overflow-x: hidden;
-    }
-
-    /* Ensure tab-contents do not overflow */
-    .tab-contents {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
     /* Make the logo smaller */
+    
     .logo {
         width: 120px; /* Adjust this value as needed */
         height: auto; /* Maintain aspect ratio */
@@ -589,25 +549,12 @@ nav .fa-solid {
     }
 
     .intro-text img {
-        height: 100px;
+        height: 90px;
         transition: none;
     }
 
     .intro-text img:hover {
         height: 100px;
-    }
-
-    /* Other styles remain unchanged */
-    nav ul {
-        background: #132dd4; /* Same as navbar */
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 60px;
-        padding-top: 15px;
-        z-index: 2;
-        transition: right 0.5s;
     }
 
     .about {
