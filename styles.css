@@ -546,7 +546,13 @@ nav .fa-solid {
 @media only screen and (max-width: 600px) {
     /* Prevent horizontal scrolling */
     body {
-        overflow-x: hidden; 
+        overflow-x: hidden;
+    }
+
+    /* Ensure tab-contents do not overflow */
+    .tab-contents {
+        overflow-x: hidden;
+        width: 100%;
     }
 
     /* Make the logo smaller */
