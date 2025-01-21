@@ -235,7 +235,6 @@ nav ul li a:hover::after {
 
 .tab-contents li {
     margin-bottom: 10px;
-    list-style-type: circle;
 }
 
 .tab-contents li span {
@@ -549,12 +548,12 @@ nav .fa-solid {
     }
 
     .intro-text img {
-        height: 90px;
+        height: 85px;
         transition: none;
     }
 
     .intro-text img:hover {
-        height: 100px;
+        height: 85px;
     }
 
     .about {
@@ -568,6 +567,42 @@ nav .fa-solid {
 
     .about-col-2 {
         max-width: 100%;
+    }
+    
+    .tab-titles {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px; /* Space between tab items */
+        font-size: 14px; /* Adjust font size */
+        list-style: none;
+        padding: 0;
+        font-weight: 600;
+    }
+
+    .tab-links {
+        cursor: pointer;
+        padding: 10px 20px; /* Add padding to make them look like buttons */
+        background-color: #3b7fe4; /* Button background color */
+        color: #fff; /* Button text color */
+        border: none;
+        border-radius: 5px; /* Rounded corners */
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .tab-links:hover {
+        background-color: #2d5bbf; /* Darker background on hover */
+    }
+
+    .tab-links.active-link {
+        font-weight: bold;
+        background-color: #2d5bbf; /* Active button background color */
+        color: #fff;
+    }
+
+    .tab-links::after {
+        content: none; /* Remove underline */
     }
 
     .work-list {
@@ -602,7 +637,7 @@ nav .fa-solid {
         background: #132dd4; /* Same color as navbar */
         position: fixed;
         top: 0;
-        right: -200px;
+        right: -250px; /* Adjust to match the closemenu function */
         width: 200px;
         height: 100%; /* Make it fill the entire height */
         padding-top: 15px;
@@ -619,19 +654,10 @@ nav .fa-solid {
         margin: 25px;
     }
 
-    /* Hamburger menu styling */
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
-
     nav ul .fa-solid {
         position: absolute;
         top: 25px;
-        left: 25px;
+        right: 25px; /* Adjust position */
         cursor: pointer;
         color: white; /* White icon */
     }
