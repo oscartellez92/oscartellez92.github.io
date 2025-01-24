@@ -81,7 +81,8 @@ nav ul li a:hover::after {
     column-gap: 40px;
     flex-wrap: wrap;
     align-items: flex-start; /* Align items to the start */
-    margin-top: 100px; /* Adjust based on your header height */
+    margin: 100px 0 0 0; /* Add top margin to prevent nav bar overlay */
+    padding: 0; /* Remove all padding */
     flex-grow: 1; /* Take up remaining space */
 }
 
@@ -101,7 +102,7 @@ nav ul li a:hover::after {
 }
 
 .intro-text img {
-    margin: 10% 5%;
+    margin: 10% 5% 0 5%; /* Top: 10%, Right: 5%, Bottom: 0, Left: 5% */
     height: 200px;
     opacity: 0.8;
     transition: height 0.3s ease;
@@ -512,6 +513,7 @@ nav .fa-solid {
     display: none; /* Hide by default on larger screens */
 }
 
+
 @media only screen and (max-width: 600px) {
     /* Make the logo smaller */
     
@@ -660,5 +662,51 @@ nav .fa-solid {
         right: 25px; /* Adjust position */
         cursor: pointer;
         color: white; /* White icon */
+    }
+
+    .intro {
+        margin: 100px 0 0 0; /* Add top margin to prevent nav bar overlay */
+        padding: 0; /* Remove all padding */
+    }
+}
+
+/* Add media query for tablets */
+@media only screen and (max-width: 1024px) and (min-width: 601px) {
+    .intro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 100px 0 0 0; /* Add top margin to prevent nav bar overlay */
+        padding: 0; /* Remove all padding */
+    }
+
+    .intro-text {
+        flex: 1;
+        margin-top: 0; /* Remove top margin */
+        margin-left: 5%; /* Match left margin with right margin */
+        font-size: 24px;
+    }
+
+    .intro-text h1 {
+        font-size: 40px;
+    }
+
+    .intro-text p {
+        font-size: 20px;
+    }
+
+    .intro-text img {
+        height: 150px;
+        margin: 5% 2.5%;
+    }
+
+    .intro-pic {
+        flex: 1;
+        height: auto;
+    }
+
+    .intro-pic img {
+        height: auto;
+        width: 100%;
     }
 }
