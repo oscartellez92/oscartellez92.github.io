@@ -710,3 +710,44 @@ nav .fa-solid {
         width: 100%;
     }
 }
+
+/* Add media query for larger tablets */
+@media only screen and (max-width: 1366px) and (min-width: 1025px) {
+    .intro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 100px 0 0 0; /* Add top margin to prevent nav bar overlay */
+        padding: 0; /* Remove all padding */
+    }
+
+    .intro-text {
+        flex: 1;
+        margin-top: 0; /* Remove top margin */
+        margin-left: 5%; /* Match left margin with right margin */
+        font-size: 24px;
+    }
+
+    .intro-text h1 {
+        font-size: 40px;
+    }
+
+    .intro-text p {
+        font-size: 20px;
+    }
+
+    .intro-text img {
+        height: 150px;
+        margin: 5% 2.5%;
+    }
+
+    .intro-pic {
+        flex: 1;
+        height: auto;
+    }
+
+    .intro-pic img {
+        height: auto;
+        width: 100%;
+    }
+}
