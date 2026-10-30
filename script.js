@@ -74,6 +74,23 @@
   const submitButton = document.getElementById("submit-message");
   if (!form || !formStatus || !submitButton) return;
 
+  const projectContext = document.getElementById("project-context");
+  const projectNames = Object.freeze({
+    "growth-metrics": "growth-metrics",
+    "revenue-operations": "Revenue Desk + Ozzie",
+    "sales-call-ai": "Sales-call transcription + Hermes",
+    "klaviyo-integrations": "Klaviyo integrations",
+    "sales-intelligence": "Sales intelligence"
+  });
+
+  document.addEventListener("click", (event) => {
+    const enquiry = event.target.closest("[data-project-enquiry]");
+    if (!enquiry || !projectContext) return;
+    // Keep context separate from the visitor's message and out of analytics.
+    const name = projectNames[enquiry.dataset.projectEnquiry];
+    if (typeof name === "string") projectContext.value = name;
+  });
+
   let submitting = false;
   let resetTimer;
   const buttonContents = Array.from(submitButton.childNodes);
