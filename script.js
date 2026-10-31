@@ -77,7 +77,7 @@
   const projectContext = document.getElementById("project-context");
   const projectNames = Object.freeze({
     "growth-metrics": "growth-metrics",
-    "revenue-operations": "Revenue Desk + Ozzie",
+    "revenue-operations": "Revenue OS + Ozzie",
     "sales-call-ai": "Sales-call transcription + Hermes",
     "klaviyo-integrations": "Klaviyo integrations",
     "sales-intelligence": "Sales intelligence"
