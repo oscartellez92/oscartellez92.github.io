@@ -63,7 +63,7 @@ nav>a:not(.nav-contact):hover { color:var(--blue); }
 .experience-strip>p strong { font-weight:500; }
 .experience-strip>div { display:flex; flex-direction:column; }
 .company { font:700 1.2rem var(--heading); letter-spacing:-.04em; }
-.company-affiliation { display:inline-block; margin-left:2px; vertical-align:super; font:500 .6rem/1.4 var(--font); letter-spacing:0; color:var(--muted); }
+.company-affiliation { display:inline-block; margin-left:2px; vertical-align:super; font:400 .5rem/1 var(--font); letter-spacing:0; color:var(--muted); }
 .company-detail { font-size:.65rem; color:var(--muted); }
 .section { padding:95px 0; }
 .work-section,.about-section { background:white; border-top:1px solid var(--line); }
@@ -136,7 +136,7 @@ nav>a:not(.nav-contact):hover { color:var(--blue); }
 .experience-date { font-size:.61rem; color:var(--muted); display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:12px; }
 .current-label { font-size:.55rem; border:1px solid #c4d8c6; border-radius:3px; background:#eef6ec; color:#44674c; padding:2px 6px; text-transform:uppercase; letter-spacing:.06em; }
 .experience-item h3 { font-size:1.2rem; letter-spacing:-.035em; line-height:1.4; }
-.experience-item h3>span { font:400 .72rem var(--font); letter-spacing:0; color:var(--muted); margin-left:5px; }
+.experience-item h3>.company-affiliation { margin-left:5px; }
 .experience-item .role-title { font-size:.74rem; color:var(--ink); font-weight:500; margin-top:6px; }
 .experience-item p:not(.role-title) { font-size:.76rem; color:var(--muted); line-height:1.75; margin-top:8px; }
 .education-note { grid-column:1 / -1; border-top:1px solid var(--line); padding-top:24px; }
@@ -225,10 +225,22 @@ form .btn:disabled { opacity:.65; cursor:wait; transform:none; }
 .experience-strip>div { min-width:0; }
 @media(max-width:800px) {
   .experience-strip { grid-template-columns:1fr 1.5fr 1.1fr 1fr; }
-  .company-affiliation { font-size:.6rem; }
 }
 @media(max-width:620px) {
   .experience-strip { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
   .experience-strip>div:first-of-type { grid-column:1/-1; }
   .company-detail { font-size:.62rem; }
+}
+
+/* Small, deliberate interactions complement the one-time entrance animations. */
+@media(prefers-reduced-motion:no-preference) {
+  .featured-project,.project-card { transition:transform .26s ease,box-shadow .26s ease; }
+  .text-link,.project-link { transition:color .2s ease,border-color .2s ease; }
+  .project-link>span,.nav-contact>span { display:inline-block; transition:transform .22s ease; }
+  .service-icon { transition:transform .26s ease; }
+  @media(hover:hover) and (pointer:fine) {
+    .featured-project:hover,.project-card:hover { transform:translateY(-3px); box-shadow:0 10px 25px rgba(25,43,53,.07); }
+    .project-link:hover>span,.nav-contact:hover>span { transform:translate(2px,-2px); }
+    .service-card:hover .service-icon { transform:translateY(-2px); }
+  }
 }

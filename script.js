@@ -69,6 +69,52 @@
     });
   }
 
+  const motionPreference = typeof window.matchMedia === "function"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)")
+    : null;
+
+  if (motionPreference && !motionPreference.matches && typeof window.IntersectionObserver === "function") {
+    const activeAnimations = new Set();
+    const entranceObserver = new window.IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (!entry.isIntersecting) return;
+        const element = entry.target;
+        observer.unobserve(element);
+        if (motionPreference.matches || element.matches(":focus-within")) return;
+
+        // Animate on arrival without hiding content or leaving inline styles behind.
+        const animation = element.animate([
+          { opacity: 0.55, transform: "translateY(10px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ], {
+          duration: 560,
+          delay: Math.min(index * 45, 135),
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "backwards"
+        });
+        activeAnimations.add(animation);
+        animation.onfinish = animation.oncancel = () => activeAnimations.delete(animation);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
+
+    document.querySelectorAll([
+      ".hero-copy > *", ".hero-visual", ".experience-strip", ".section-heading",
+      "article[data-project]", ".service-card", ".about-copy", ".experience-item",
+      ".education-note", ".contact-copy", "#contact-form"
+    ].join(", ")).forEach((element) => {
+      if (typeof element.animate === "function") entranceObserver.observe(element);
+    });
+
+    if (typeof motionPreference.addEventListener === "function") {
+      motionPreference.addEventListener("change", (event) => {
+        if (!event.matches) return;
+        entranceObserver.disconnect();
+        activeAnimations.forEach((animation) => animation.cancel());
+        activeAnimations.clear();
+      });
+    }
+  }
+
   const form = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
   const submitButton = document.getElementById("submit-message");
